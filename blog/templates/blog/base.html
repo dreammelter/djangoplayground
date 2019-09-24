@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<!-- so this is what they call a template. you'll stuff your dynamic data into these -->
+
+<html>
+    <head>
+        <title>DM's Django Playground</title>
+        <!--we'll get to styling some other time-->
+    </head>
+    <body>
+        <div>
+            <!-- site/blog header -->
+            <h1><a href="/">The Blog Roll</a></h1>
+            {% if user.is_authenticated %}
+            <a href="{% url 'post_new' %}">[new post]</a>
+            {% endif %}
+        </div>
+        <div>
+            {% block content %}
+            {% endblock %}
+        </div>
+    </body>
+</html>
