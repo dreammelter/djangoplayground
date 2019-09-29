@@ -4,20 +4,30 @@
 
 <html>
     <head>
+        <!-- UIkit CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/css/uikit.min.css" />
+
+        <!-- UIkit JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit-icons.min.js"></script>
+
         <title>DM's Django Playground</title>
-        <!--we'll get to styling some other time-->
     </head>
     <body>
-        <div>
-            <!-- site/blog header -->
-            <h1><a href="/">The Blog Roll</a></h1>
-            {% if user.is_authenticated %}
-            <a href="{% url 'post_new' %}">[new post]</a>
-            {% endif %}
-        </div>
-        <div>
-            {% block content %}
-            {% endblock %}
+        <div class="uk-container-large">
+            <div>
+                <!-- site/blog header -->
+                <div class="uk-section-muted uk-section-small">
+                        <h1 class="uk-link-heading uk-heading-medium uk-heading-line uk-text-center"><a href="/">The Blog Roll</a></h1>
+                        {% if user.is_authenticated %}
+                        <a title="new post" href="{% url 'post_new' %}" class="uk-icon-link uk-position-top-right uk-margin-large-top uk-margin-small-right" uk-icon="icon: plus-circle; ratio: 2"></a>
+                        {% endif %}
+                </div>
+            </div>
+            <div class="uk-container uk-margin-medium-top">
+                {% block content %}
+                {% endblock %}
+            </div>
         </div>
     </body>
 </html>

@@ -3,10 +3,19 @@
 
 {% block content %}
     {% for post in posts %}
-        <div>
-            <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
-            <p><i>published: {{ post.published_date }}</i></p>
-            <p>{{ post.text|linebreaksbr }}</p>
+        <div class="uk-container-small">
+            <div class="uk-card uk-card-hover">
+                <div class="uk-card-header">
+                    <h2 class="uk-margin-remove-bottom uk-link-heading"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+                    <p class="uk-text-meta uk-margin-remove-top"><i>published: {{ post.published_date }}</i></p>
+                </div>
+                <div class="uk-card-body">
+                    <p>{{ post.text|linebreaksbr }}</p>
+                </div>
+                <div class="uk-card-footer">
+                    <hr class="uk-divider-icon uk-margin-small-bottom">
+                </div>
+            </div>
         </div>
     {% endfor %}
 {% endblock %}
