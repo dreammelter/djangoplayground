@@ -16,12 +16,53 @@
     <body>
         <div class="uk-container-large">
             <div>
-                <!-- site/blog header -->
+                <!-- old site/blog header - will repurpose with a nice cover img or sth instead
                 <div class="uk-section-muted uk-section-small">
-                        <h1 class="uk-link-heading uk-heading-medium uk-heading-line uk-text-center"><a href="/">The Blog Roll</a></h1>
-                        {% if user.is_authenticated %}
-                        <a title="new post" href="{% url 'post_new' %}" class="uk-icon-link uk-position-top-right uk-margin-large-top uk-margin-small-right" uk-icon="icon: plus-circle; ratio: 2"></a>
-                        {% endif %}
+                    <h1 class="uk-link-heading uk-heading-medium uk-heading-line uk-text-center"><a href="/">The Blog Roll</a></h1>
+                </div>
+                -->
+
+                <nav uk-sticky class="uk-navbar uk-navbar-container">
+                    <div class="uk-navbar-left">
+                        <ul class="uk-navbar-nav">
+                            <li class="uk-active"><a href="/">The Blog Roll</a></li>
+                            <!--around the web? other apps?
+                            <li>
+                                <a href="#"></a>
+                            </li>
+                            this part is setup to be a apps dropdown menu but I wonder if the Blog Roll should be?
+                            cuz I'll eventually swap it out for a "Site Main/Index" thing once we add
+                            other apps.
+                            -->
+                        </ul>
+                    </div>
+                    <div class="uk-navbar-right">
+                        <a class="uk-navbar-toggle" uk-toggle="target: #navmenu" uk-navbar-toggle-icon></a>
+                    </div>
+                </nav>
+                
+                <!-- offcanvas menu -->
+                <div id="navmenu" uk-offcanvas="flip: true; overlay: true">
+                    <div class="uk-offcanvas-bar uk-flex uk-flex-column">
+                        <ul class="uk-nav uk-nav-primary uk-nav-center uk-margin-auto-vertical">
+                            <!-- should probably be a close button or something -->
+                            <button class="uk-offcanvas-close" type="button" uk-close></button>
+
+                            <!-- could be a good idea to add a login option here. later. -->
+
+                            <!-- extensible section for user, like admin/author options -->
+                            <li class="uk-nav-header uk-text-large">Tools</li>
+                            <li class="uk-nav-divider"></li>
+                            {% if user.is_authenticated %}
+                                <li class=""><a href="{% url 'post_new' %}">
+                                    <span class="uk-margin-small-left" uk-icon="icon: plus-circle">New post </span>
+                                </a></li>
+                                
+                                {% block bonus_menu %}
+                                {% endblock %}
+                            {% endif %}
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="uk-container uk-margin-medium-top">

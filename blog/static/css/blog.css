@@ -1,0 +1,15 @@
+body {
+    /*want them off the edge of the page*/
+    margin: 15px;
+}
+h1 {
+    /*kinda wanna make them bold*/
+    color: #000000
+}
+
+a:hover {
+    /*change color*/
+    color: #f0a4a0
+}
+
+/*nothing seems to be updating rn.*/
