@@ -3,16 +3,16 @@
 {% block bonus_menu %}
     <!-- adds option to edit current post-->
     <li><a href="{% url 'post_edit' pk=post.pk %}">
-        <span class="uk-margin-small-left" uk-icon="icon: file-edit">Edit Post </span>
+        <span class="">Edit Post </span>
     </a></li>
 {%endblock%}
 
 {% block content %}
     <div>
-        <article class="uk-article">                
-                <h2 class="uk-article-title">{{ post.title }}</h2>
+        <article class="post">                
+                <h2 class="">{{ post.title }}</h2>
                 {% if post.published_date %}
-                <div class="uk-article-meta">
+                <div class="">
                     {{ post.published_date }}
                 </div>
                 {% endif %}

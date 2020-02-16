@@ -4,17 +4,17 @@
 
 <html>
     <head>
-        <!-- UIkit CSS -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/css/uikit.min.css" />
+        <!-- CSS -->
+        <link rel="stylesheet" href="" />
 
-        <!-- UIkit JS -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit-icons.min.js"></script>
+        <!-- external JS
+        <script src=""></script>
+        -->
 
         <title>DM's Django Playground</title>
     </head>
     <body>
-        <div class="uk-container-large">
+        <div class="">
             <div>
                 <!-- old site/blog header - will repurpose with a nice cover img or sth instead
                 <div class="uk-section-muted uk-section-small">
@@ -22,10 +22,10 @@
                 </div>
                 -->
 
-                <nav uk-sticky class="uk-navbar uk-navbar-container">
-                    <div class="uk-navbar-left">
-                        <ul class="uk-navbar-nav">
-                            <li class="uk-active"><a href="/">The Blog Roll</a></li>
+                <nav class="">
+                    <div class="">
+                        <ul class="">
+                            <li class=""><a href="/">The Blog Roll</a></li>
                             <!--around the web? other apps?
                             <li>
                                 <a href="#"></a>
@@ -36,26 +36,26 @@
                             -->
                         </ul>
                     </div>
-                    <div class="uk-navbar-right">
-                        <a class="uk-navbar-toggle" uk-toggle="target: #navmenu" uk-navbar-toggle-icon></a>
+                    <div class="">
+                        <a class="">...wait what is this for</a>
                     </div>
                 </nav>
                 
                 <!-- offcanvas menu -->
-                <div id="navmenu" uk-offcanvas="flip: true; overlay: true">
-                    <div class="uk-offcanvas-bar uk-flex uk-flex-column">
-                        <ul class="uk-nav uk-nav-primary uk-nav-center uk-margin-auto-vertical">
+                <div id="navmenu">
+                    <div class="navmenu-content">
+                        <ul class="">
                             <!-- should probably be a close button or something -->
-                            <button class="uk-offcanvas-close" type="button" uk-close></button>
+                            <button class="close-btn" type="button">x</button>
 
                             <!-- could be a good idea to add a login option here. later. -->
 
                             <!-- extensible section for user, like admin/author options -->
-                            <li class="uk-nav-header uk-text-large">Tools</li>
-                            <li class="uk-nav-divider"></li>
+                            <li class="">Tools</li>
+                            <li class="">---*---</li>
                             {% if user.is_authenticated %}
                                 <li class=""><a href="{% url 'post_new' %}">
-                                    <span class="uk-margin-small-left" uk-icon="icon: plus-circle">New post </span>
+                                    <span class="">New post </span>
                                 </a></li>
                                 
                                 {% block bonus_menu %}
@@ -65,7 +65,7 @@
                     </div>
                 </div>
             </div>
-            <div class="uk-container uk-margin-medium-top">
+            <div class="">
                 {% block content %}
                 {% endblock %}
             </div>

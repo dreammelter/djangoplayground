@@ -1,14 +1,14 @@
 {% extends "blog/base.html" %}
 
 {% block content %}
-    <div class="uk-card uk-card-default">
-        <div class="uk-card-header">
-            <h2 class="uk-text-primary">New Post</h2>
+    <div class="">
+        <div class="">
+            <h2 class="">New Post</h2>
         </div>
-        <div class="uk-card-body">
+        <div class="">
             <form method="POST" class="post-form">{% csrf_token %}
                 {{ form.as_p }} <!-- i'll probably break this down next time -->
-                <button type="submit" class="uk-button uk-button-primary">Save</button>
+                <button type="submit" class="">Save</button>
             </form>
         </div>
     </div>
