@@ -4,71 +4,58 @@
 
 <html>
     <head>
-        <!-- CSS -->
-        <link rel="stylesheet" href="" />
+        <!-- static files -->
+        <link rel="stylesheet" href="{% static '/css/blog.css' %}" />
 
-        <!-- external JS
-        <script src=""></script>
-        -->
+        <!-- external files -->
 
         <title>DM's Django Playground</title>
     </head>
     <body>
-        <div class="">
-            <div>
-                <!-- old site/blog header - will repurpose with a nice cover img or sth instead
-                <div class="uk-section-muted uk-section-small">
-                    <h1 class="uk-link-heading uk-heading-medium uk-heading-line uk-text-center"><a href="/">The Blog Roll</a></h1>
-                </div>
-                -->
-
-                <nav class="">
-                    <div class="">
-                        <ul class="">
-                            <li class=""><a href="/">The Blog Roll</a></li>
-                            <!--around the web? other apps?
-                            <li>
-                                <a href="#"></a>
-                            </li>
-                            this part is setup to be a apps dropdown menu but I wonder if the Blog Roll should be?
-                            cuz I'll eventually swap it out for a "Site Main/Index" thing once we add
-                            other apps.
-                            -->
-                        </ul>
-                    </div>
-                    <div class="">
-                        <a class="">...wait what is this for</a>
-                    </div>
+        <div class="container">
+            <!-- old site/blog header - will repurpose with a nice cover img or sth instead
+                <header class="">
+                    <h1 class=""><a href="/">The Blog Roll</a></h1>
+                </header>
+            -->
+            <div class="menus">
+                <!--MAIN NAV -->
+                <nav class="main-nav">
+                    <ul class="main-menu">
+                        <li><a href="/">The Blog Roll</a></li>
+                        <li><a href="/projects">Projects</a></li>
+                        <li><a href="/">Portfolio</a></li>
+                    </ul>
                 </nav>
                 
                 <!-- offcanvas menu -->
-                <div id="navmenu">
-                    <div class="navmenu-content">
-                        <ul class="">
-                            <!-- should probably be a close button or something -->
-                            <button class="close-btn" type="button">x</button>
+                <button class="toggle-btn" type="button">x</button>
+                <!--<div class="toggle-btn">[x]</div>-->
+                <div class="extra-menu">
+                    <ul>
+                        <!-- could be a good idea to add a login option here. later. -->
 
-                            <!-- could be a good idea to add a login option here. later. -->
-
-                            <!-- extensible section for user, like admin/author options -->
-                            <li class="">Tools</li>
-                            <li class="">---*---</li>
-                            {% if user.is_authenticated %}
-                                <li class=""><a href="{% url 'post_new' %}">
-                                    <span class="">New post </span>
-                                </a></li>
-                                
-                                {% block bonus_menu %}
-                                {% endblock %}
-                            {% endif %}
-                        </ul>
-                    </div>
+                        <!-- extensible section for user, like admin/author options -->
+                        <li><h2>Tools</h2></li>
+                        {% if user.is_authenticated %}
+                            <li><a href="{% url 'post_new' %}">New post</a></li>
+                            
+                            {% block bonus_menu %}
+                            {% endblock %}
+                        {% endif %}
+                    </ul>
                 </div>
-            </div>
-            <div class="">
+            </div> <!--end menus container -->
+            <section class="blogroll">
                 {% block content %}
                 {% endblock %}
-            </div>
-        </div>
+            </section>
+            <footer>
+                &copy; dreammelter 2019-2020
+                <!--include sns later-->
+            </footer>
+        </div> <!-- end main container wrapper...-->
     </body>
+
+    <script src="{% static '/js/blog.js' %}"></script>
 </html>

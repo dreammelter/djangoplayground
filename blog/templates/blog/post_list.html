@@ -4,7 +4,7 @@
 {% block content %}
     {% for post in posts %}
         <div class="">
-            <div class="postcard"> <!--was a hover setting?-->
+            <article class="postcard"> <!--was a hover setting?-->
                 <div class="postcard-header">
                     <h2 class=""><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
                     <p class=""><i>published: {{ post.published_date }}</i></p>
@@ -13,9 +13,9 @@
                     <p>{{ post.text|linebreaksbr }}</p>
                 </div>
                 <div class="postcard-footer">
-                    <hr class=""> <!--fancy divider symbol...-->
+                    <p>---</p><!--fancy divider symbol...?-->
                 </div>
-            </div>
+            </article>
         </div>
     {% endfor %}
 {% endblock %}

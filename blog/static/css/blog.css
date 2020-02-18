@@ -1,15 +1,110 @@
+* {
+    /*simple reset*/
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+title {
+    color: #bbbbbb;
+    display: none; /*just a temporary setting.*/
+}
+
 body {
-    /*want them off the edge of the page*/
-    margin: 15px;
-}
-h1 {
-    /*kinda wanna make them bold*/
-    color: #000000
-}
-
-a:hover {
-    /*change color*/
-    color: #f0a4a0
+    /* dark theme! */
+    background-color: #222222;
+    color: #bbbbbb;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
 }
 
-/*nothing seems to be updating rn.*/
+a {
+    color: #d089ff;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #a4deff;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    width: 95%;
+    max-width: 1128px;
+    margin: auto;
+}
+
+/* MAIN/NAV MENU */
+.main-menu {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.main-menu li {
+    margin-right: 15px;
+    font-size: 1.5em;
+}
+
+/* EXTRA MENU */
+.toggle-btn {
+    cursor: pointer;
+    position: absolute;
+    /*background: #a4deff;*/
+    top: 10px;
+    right: 25px;
+    z-index: 2;
+}
+
+/* togglable extra menu v1 */
+.extra-menu {
+    display: block;
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 60px;
+    background: rgba(60, 60, 120, 0.9); /*mostly for testing*/
+    padding: 5px 10px;
+    transform: translateY(-100px);
+    transition: transform 0.5s ease-in-out 0.2s;
+}
+
+.extra-menu.show {
+    transform: translateY(0);
+    transition: transform 0.5s ease-in-out;
+}
+
+.extra-menu ul {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.extra-menu ul li {
+    margin-right: 10px;
+}
+
+
+/* Blog Roll Section */
+.blogroll {
+    /*currently the posts are lined up evenly, creating large gaps in a column*/
+    /*maybe consider using flex instead?*/
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 25px;
+    row-gap: 15px;
+    justify-content: space-between;
+}
+
+.blogroll article {
+    border: 1px solid oldlace; /*also for debugging the grid spacing...*/
+    padding: 10px;
+}
+
+/* Blog Roll "Post Cards" */
+.postcard:hover {
+    border-color: #a4deff;
+}
